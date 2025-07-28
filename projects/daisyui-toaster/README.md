@@ -105,3 +105,5 @@ export class DemoComponent {
   }
 }
 ```
+
+Copy the `safelist.html` file somewhere to your project. This needs to be done so that Tailwind CSS will not purge the styles used by the toast notifications. You can place it in the `src` folder or any other location that is included in your build process.

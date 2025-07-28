@@ -3,5 +3,6 @@
   "dest": "../../dist/daisyui-toaster",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": ["safelist.html"]
 }
