@@ -1,0 +1,19 @@
+{
+  "name": "daisyui-toaster",
+  "version": "0.0.1",
+  "author": {
+    "name": "jjs98"
+  },
+  "license": "MIT",
+  "description": "An Angular component and service to enhance the daisyui toast experience.",
+  "peerDependencies": {
+    "@angular/common": "^20.1.0",
+    "@angular/core": "^20.1.0",
+    "daisyui": "^5.0.0",
+    "tailwindcss": "^4.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  },
+  "sideEffects": false
+}

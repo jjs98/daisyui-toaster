@@ -105,10 +105,3 @@ export class DemoComponent {
   }
 }
 ```
-
-## Demo
-
-To run the demo application, follow these steps:
-
-- `pnpm install`
-- `pnpm start`

@@ -1,0 +1,38 @@
+<div
+  [class]="
+    'toast toast-' +
+    toastService.verticalPosition +
+    ' toast-' +
+    toastService.horizontalPosition
+  "
+  [style]="'z-index: ' + toastService.zIndex">
+  <ng-container *ngFor="let toast of toastService.toasts()">
+    <div
+      class="alert mb-2 cursor-pointer self-end shadow-lg"
+      [ngClass]="{
+        'alert-success': toast.severity === 'success',
+        'alert-info': toast.severity === 'info',
+        'alert-warning': toast.severity === 'warning',
+        'alert-error': toast.severity === 'error',
+      }"
+      (click)="
+        toast.closeOnClick
+          ? remove(toast.id)
+          : toast.callback
+            ? toast.callback()
+            : null
+      ">
+      <div class="flex-1">
+        <h3 class="font-bold">{{ toast.summary }}</h3>
+        <div class="text-xs">{{ toast.detail }}</div>
+      </div>
+      <button
+        *ngIf="toast.showClose"
+        class="btn btn-ghost btn-sm"
+        (click)="remove(toast.id); $event.stopPropagation()"
+        aria-label="close">
+        ✕
+      </button>
+    </div>
+  </ng-container>
+</div>

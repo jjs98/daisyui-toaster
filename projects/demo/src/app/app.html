@@ -1,0 +1,93 @@
+<div class="h-16"></div>
+<daisyui-toaster></daisyui-toaster>
+<div class="flex w-2xl flex-col gap-4 justify-self-center p-4">
+  <button
+    class="btn btn-primary flex"
+    type="submit"
+    (click)="sendClosableToast()">
+    Send closable Toast
+  </button>
+  <button
+    class="btn btn-primary flex"
+    type="button"
+    (click)="sendAutocloseToast()">
+    Send autoclose Toast
+  </button>
+  <button
+    class="btn btn-primary flex"
+    type="button"
+    (click)="sendCallbackToast()">
+    Send callback Toast
+  </button>
+
+  <form
+    (ngSubmit)="sendCustomToast()"
+    autocomplete="off"
+    class="flex flex-col gap-2">
+    <div>
+      <label for="severity">Severity</label>
+      <select
+        id="severity"
+        name="severity"
+        [(ngModel)]="severity"
+        class="select select-bordered w-full">
+        <option [value]="ToastSeverity.Custom">Custom</option>
+        <option [value]="ToastSeverity.Success">Success</option>
+        <option [value]="ToastSeverity.Info">Info</option>
+        <option [value]="ToastSeverity.Warning">Warning</option>
+        <option [value]="ToastSeverity.Error">Error</option>
+      </select>
+    </div>
+    <div>
+      <label for="summary">Summary</label>
+      <input
+        id="summary"
+        name="summary"
+        type="text"
+        [(ngModel)]="summary"
+        class="input input-bordered w-full" />
+    </div>
+    <div>
+      <label for="detail">Detail</label>
+      <input
+        id="detail"
+        name="detail"
+        type="text"
+        [(ngModel)]="detail"
+        class="input input-bordered w-full" />
+    </div>
+    <div>
+      <label for="duration">Duration</label>
+      <input
+        id="duration"
+        name="duration"
+        type="number"
+        [(ngModel)]="duration"
+        class="input input-bordered w-full" />
+    </div>
+    <div>
+      <label for="showClose">Show Close Button</label>
+      <input
+        id="showClose"
+        name="showClose"
+        type="checkbox"
+        [(ngModel)]="showClose"
+        class="toggle toggle-primary" />
+    </div>
+    <div>
+      <label for="closeOnClick">Close On Click</label>
+      <input
+        id="closeOnClick"
+        name="closeOnClick"
+        type="checkbox"
+        [(ngModel)]="closeOnClick"
+        class="toggle toggle-primary" />
+    </div>
+    <button
+      class="btn btn-primary flex"
+      type="button"
+      (click)="sendCustomToast()">
+      Send custom Toast
+    </button>
+  </form>
+</div>
