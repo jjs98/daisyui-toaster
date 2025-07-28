@@ -62,7 +62,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-          path: dist/daisyui-toaster
+          path: dist
 
       - name: Publish daisyui-toaster
         id: publish
