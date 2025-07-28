@@ -1,20 +1,36 @@
 <div
   [class]="
-    'toast toast-' +
-    toastService.verticalPosition +
-    ' toast-' +
-    toastService.horizontalPosition
+    'toast' +
+    (toastService.verticalPosition === 'top'
+      ? ' toast-top'
+      : toastService.verticalPosition === 'middle'
+        ? ' toast-middle'
+        : toastService.verticalPosition === 'bottom'
+          ? ' toast-bottom'
+          : '') +
+    (toastService.horizontalPosition === 'start'
+      ? ' toast-start'
+      : toastService.horizontalPosition === 'center'
+        ? ' toast-center'
+        : toastService.horizontalPosition === 'end'
+          ? ' toast-end'
+          : '')
   "
   [style]="'z-index: ' + toastService.zIndex">
   <ng-container *ngFor="let toast of toastService.toasts()">
     <div
       class="alert mb-2 cursor-pointer self-end shadow-lg"
-      [ngClass]="{
-        'alert-success': toast.severity === 'success',
-        'alert-info': toast.severity === 'info',
-        'alert-warning': toast.severity === 'warning',
-        'alert-error': toast.severity === 'error',
-      }"
+      [class]="
+        toast.severity === 'success'
+          ? 'alert-success'
+          : toast.severity === 'info'
+            ? 'alert-info'
+            : toast.severity === 'warning'
+              ? 'alert-warning'
+              : toast.severity === 'error'
+                ? 'alert-error'
+                : ''
+      "
       (click)="
         toast.closeOnClick
           ? remove(toast.id)
