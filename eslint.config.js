@@ -14,7 +14,6 @@ module.exports = tseslint.config(
       ...tseslint.configs.stylistic,
       ...angular.configs.tsRecommended,
     ],
-    ignores: ['src/app/api/**'],
     processor: angular.processInlineTemplates,
     plugins: { import: importPlugin },
     rules: {

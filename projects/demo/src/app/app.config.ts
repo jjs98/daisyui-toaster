@@ -14,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideToastService({
       horizontalPosition: ToastHorizontalPosition.Center,
       verticalPosition: ToastVerticalPosition.Top,
+      zIndex: 1000,
     }),
   ],
 };
