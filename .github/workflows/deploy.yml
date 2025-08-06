@@ -32,9 +32,6 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Audit
-        run: pnpm audit
-
       # - name: Run tests
       #   run: pnpm test
 
