@@ -112,7 +112,7 @@ export class DemoComponent {
 Add the package as a source to your css to prevent purging of styles used by the toast notifications.
 
 ```css
-@import 'daisyui-toaster';
+@import 'tailwindcss';
 @source "./node_modules/daisyui-toaster";
 @plugin "daisyui" {
   themes: dark --default;
