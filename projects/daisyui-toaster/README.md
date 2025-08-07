@@ -39,6 +39,7 @@ export const appConfig: ApplicationConfig = {
       defaultDuration: 5000,
       defaultShowClose: true,
       defaultCloseOnClick: false,
+      maxToasts: 5,
     }),
   ],
 };

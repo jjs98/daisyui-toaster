@@ -2,6 +2,7 @@ export interface ToastConfig {
   zIndex?: number;
   verticalPosition?: ToastVerticalPosition;
   horizontalPosition?: ToastHorizontalPosition;
+  maxToasts?: number;
   defaultDuration?: number;
   defaultShowClose?: boolean;
   defaultCloseOnClick?: boolean;

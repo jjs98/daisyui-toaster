@@ -11,6 +11,7 @@ export class ToastService {
   public defaultDuration = 5000;
   public defaultShowClose = true;
   public defaultCloseOnClick = false;
+  public maxToasts = 5;
 
   private idCounter = 0;
 
@@ -27,6 +28,7 @@ export class ToastService {
         toastConfig.defaultShowClose ?? this.defaultShowClose;
       this.defaultCloseOnClick =
         toastConfig.defaultCloseOnClick ?? this.defaultCloseOnClick;
+      this.maxToasts = toastConfig.maxToasts ?? this.maxToasts;
     }
   }
 
@@ -42,7 +44,15 @@ export class ToastService {
       closeOnClick: config.closeOnClick ?? this.defaultCloseOnClick,
       callback: config.callback,
     };
-    this.toasts.set([...this.toasts(), toast]);
+
+    let currentToasts = this.toasts().sort((a, b): number => a.id - b.id);
+    if (currentToasts.length >= this.maxToasts) {
+      currentToasts = currentToasts.slice(
+        currentToasts.length - (this.maxToasts - 1)
+      );
+    }
+
+    this.toasts.set([...currentToasts, toast]);
     setTimeout((): void => this.remove(id), toast.duration);
   }
 
