@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng build daisyui-toaster && ng serve demo",
     "build": "ng build daisyui-toaster && ng build demo",
-    "test": "jest --config projects/daisyui-toaster/jest.config.js",
+    "test": "jest --config projects/daisyui-toaster/jest.config.js --coverage --coverageDirectory=../../coverage",
     "prettier": "prettier --write .",
     "lint": "ng lint",
     "prepare": "husky"

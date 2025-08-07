@@ -1,6 +1,7 @@
 [![npm](https://img.shields.io/npm/v/daisyui-toaster?color=%2300d26a&style=for-the-badge)](https://www.npmjs.com/package/daisyui-toaster)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/jjs98/daisyui-toaster/deploy.yml?branch=main&style=for-the-badge)](https://github.com/jjs98/daisyui-toaster/actions/workflows/deploy.yml)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/daisyui-toaster?color=%23FF006F&label=Bundle%20Size&style=for-the-badge)](https://bundlephobia.com/package/daisyui-toaster)
+[![Codecov](https://img.shields.io/codecov/c/github/jjs98/daisyui-toaster?style=for-the-badge)](https://codecov.io/gh/jjs98/daisyui-toaster)
 
 # daisyui-toaster
 
