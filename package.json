@@ -6,6 +6,7 @@
     "start": "ng build daisyui-toaster && ng serve demo",
     "build": "ng build daisyui-toaster && ng build demo",
     "test": "jest --config projects/daisyui-toaster/jest.config.js",
+    "prettier": "prettier --write .",
     "lint": "ng lint",
     "prepare": "husky"
   },

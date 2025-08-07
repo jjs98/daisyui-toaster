@@ -2,6 +2,9 @@ export interface ToastConfig {
   zIndex?: number;
   verticalPosition?: ToastVerticalPosition;
   horizontalPosition?: ToastHorizontalPosition;
+  defaultDuration?: number;
+  defaultShowClose?: boolean;
+  defaultCloseOnClick?: boolean;
 }
 
 export enum ToastVerticalPosition {

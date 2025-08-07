@@ -8,6 +8,9 @@ export class ToastService {
   public zIndex = 1000;
   public verticalPosition = 'top';
   public horizontalPosition = 'end';
+  public defaultDuration = 5000;
+  public defaultShowClose = true;
+  public defaultCloseOnClick = false;
 
   private idCounter = 0;
 
@@ -18,6 +21,12 @@ export class ToastService {
         toastConfig.verticalPosition ?? this.verticalPosition;
       this.horizontalPosition =
         toastConfig.horizontalPosition ?? this.horizontalPosition;
+      this.defaultDuration =
+        toastConfig.defaultDuration ?? this.defaultDuration;
+      this.defaultShowClose =
+        toastConfig.defaultShowClose ?? this.defaultShowClose;
+      this.defaultCloseOnClick =
+        toastConfig.defaultCloseOnClick ?? this.defaultCloseOnClick;
     }
   }
 
@@ -28,9 +37,9 @@ export class ToastService {
       severity: config.severity,
       summary: config.summary ?? '',
       detail: config.detail ?? '',
-      duration: config.duration ?? 5000,
-      showClose: config.showClose ?? true,
-      closeOnClick: config.closeOnClick ?? false,
+      duration: config.duration ?? this.defaultDuration,
+      showClose: config.showClose ?? this.defaultShowClose,
+      closeOnClick: config.closeOnClick ?? this.defaultCloseOnClick,
       callback: config.callback,
     };
     this.toasts.set([...this.toasts(), toast]);

@@ -40,6 +40,9 @@ export const appConfig: ApplicationConfig = {
       horizontalPosition: ToastHorizontalPosition.Center,
       verticalPosition: ToastVerticalPosition.Top,
       zIndex: 1000,
+      defaultDuration: 5000,
+      defaultShowClose: true,
+      defaultCloseOnClick: false,
     }),
   ],
 };
@@ -126,3 +129,5 @@ To run the demo application, follow these steps:
 
 - `pnpm install`
 - `pnpm start`
+
+![Demo](docs/demo.png)

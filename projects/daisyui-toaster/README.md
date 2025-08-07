@@ -36,6 +36,9 @@ export const appConfig: ApplicationConfig = {
       horizontalPosition: ToastHorizontalPosition.Center,
       verticalPosition: ToastVerticalPosition.Top,
       zIndex: 1000,
+      defaultDuration: 5000,
+      defaultShowClose: true,
+      defaultCloseOnClick: false,
     }),
   ],
 };
