@@ -32,7 +32,7 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Run tests
+      - name: Run unit tests
         run: pnpm test
 
       - name: Upload test results to Codecov
@@ -44,6 +44,9 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Run playwright tests
+        run: pnpm playwright
 
       - name: Upload dist
         uses: actions/upload-artifact@v4

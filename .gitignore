@@ -43,3 +43,10 @@ Thumbs.db
 
 /daisyui-toaster/node_modules
 junit.xml
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

@@ -127,6 +127,17 @@ Add the package as a source to your css to prevent purging of styles used by the
 }
 ```
 
+## Build
+
+To build the library, run the following command:
+
+- `pnpm install`
+- `pnpm build`
+- `pnpm lint`
+- `pnpm prettier`
+- `pnpm test` _Run jest unit tests_
+- `pnpm playwright` _Run Playwright tests using the demo application_
+
 ## Demo
 
 To run the demo application, follow these steps:

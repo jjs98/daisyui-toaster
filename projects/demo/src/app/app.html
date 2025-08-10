@@ -2,18 +2,21 @@
 <daisyui-toaster></daisyui-toaster>
 <div class="flex w-2xl flex-col gap-4 justify-self-center p-4">
   <button
+    id="send-closable-toast"
     class="btn btn-primary flex"
     type="submit"
     (click)="sendClosableToast()">
     Send closable Toast
   </button>
   <button
+    id="send-autoclose-toast"
     class="btn btn-primary flex"
     type="button"
     (click)="sendAutocloseToast()">
     Send autoclose Toast
   </button>
   <button
+    id="send-callback-toast"
     class="btn btn-primary flex"
     type="button"
     (click)="sendCallbackToast()">
@@ -84,6 +87,7 @@
         class="toggle toggle-primary ml-2" />
     </div>
     <button
+      id="send-custom-toast"
       class="btn btn-primary flex"
       type="button"
       (click)="sendCustomToast()">
@@ -98,20 +102,9 @@
       name="theme"
       class="select mt-1 w-full"
       (change)="setTheme($event)">
-      <option value="dark">Dark</option>
-      <option value="light">Light</option>
-      <option value="cupcake">Cupcake</option>
-      <option value="bumblebee">Bumblebee</option>
-      <option value="emerald">Emerald</option>
-      <option value="corporate">Corporate</option>
-      <option value="synthwave">Synthwave</option>
-      <option value="retro">Retro</option>
-      <option value="cyberpunk">Cyberpunk</option>
-      <option value="valentine">Valentine</option>
-      <option value="halloween">Halloween</option>
-      <option value="garden">Garden</option>
-      <option value="forest">Forest</option>
-      <option value="aqua">Aqua</option>
+      @for (theme of themes; track theme){
+      <option [value]="theme">{{ theme }}</option>
+      }
     </select>
   </div>
 </div>

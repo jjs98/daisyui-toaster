@@ -19,8 +19,8 @@ export class App {
   protected readonly toastService = inject(ToastService);
   protected readonly ToastSeverity = ToastSeverity;
   protected readonly themes = [
-    'light',
     'dark',
+    'light',
     'cupcake',
     'bumblebee',
     'emerald',
@@ -86,14 +86,21 @@ export class App {
 
   protected sendCallbackToast(): void {
     this.toastService.add({
-      severity: ToastSeverity.Success,
-      summary: 'Success',
-      detail: 'This is a success toast with a callback!',
+      severity: ToastSeverity.Info,
+      summary: 'Info',
+      detail: 'This is an info toast with a callback!',
       duration: 5000,
       showClose: true,
       closeOnClick: false,
       callback: (): void => {
-        alert('Toast clicked!');
+        this.toastService.add({
+          severity: ToastSeverity.Success,
+          summary: 'Success',
+          detail: 'Successful callback!',
+          duration: 5000,
+          showClose: true,
+          closeOnClick: false,
+        });
       },
     });
   }
