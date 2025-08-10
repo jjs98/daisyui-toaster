@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 
 /daisyui-toaster/node_modules
+junit.xml
