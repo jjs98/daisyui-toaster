@@ -45,6 +45,9 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
+      - name: Prepare playwright
+        run: pnpm playwright:prepare
+
       - name: Run playwright tests
         run: pnpm playwright
 
