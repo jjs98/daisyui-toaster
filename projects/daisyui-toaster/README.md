@@ -14,6 +14,22 @@ This is a customizable toast notification library for Angular applications, buil
 - yarn: `yarn add -D tailwindcss daisyui`
 - pnpm: `pnpm add -D tailwindcss daisyui`
 
+I recommend to use postcss with Tailwind CSS.
+
+- npm: `npm install -D postcss @tailwindcss/postcss`
+- yarn: `yarn add -D postcss @tailwindcss/postcss`
+- pnpm: `pnpm add -D postcss @tailwindcss/postcss`
+
+After that create a `.postcssrc.json` file in the root of your project with the following content:
+
+```json
+{
+  "plugins": {
+    "@tailwindcss/postcss": {}
+  }
+}
+```
+
 ## Usage
 
 Provide the toast service in your Angular application:

@@ -9,6 +9,8 @@
 
 This is a customizable toast notification library for Angular applications, built with DaisyUI and Tailwind CSS.
 
+[![Edit on StackBlitz](https://img.shields.io/badge/Edit_on_StackBlitz-1iamykpn?style=for-the-badge)](https://stackblitz.com/edit/daisyui-toaster-demo?file=src%2Fapp%2Fapp.ts)
+
 ## Installation
 
 - npm: `npm install daisyui-toaster`
@@ -20,6 +22,22 @@ This is a customizable toast notification library for Angular applications, buil
 - npm: `npm install -D tailwindcss daisyui`
 - yarn: `yarn add -D tailwindcss daisyui`
 - pnpm: `pnpm add -D tailwindcss daisyui`
+
+I recommend to use postcss with Tailwind CSS.
+
+- npm: `npm install -D postcss @tailwindcss/postcss`
+- yarn: `yarn add -D postcss @tailwindcss/postcss`
+- pnpm: `pnpm add -D postcss @tailwindcss/postcss`
+
+After that create a `.postcssrc.json` file in the root of your project with the following content:
+
+```json
+{
+  "plugins": {
+    "@tailwindcss/postcss": {}
+  }
+}
+```
 
 ## Usage
 
