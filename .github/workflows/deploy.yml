@@ -37,11 +37,13 @@ jobs:
 
       - name: Upload test results to Codecov
         uses: codecov/test-results-action@v1
+        if: ${{ !cancelled() }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
+        if: ${{ !cancelled() }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
@@ -50,6 +52,13 @@ jobs:
 
       - name: Run playwright tests
         run: pnpm playwright
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
       - name: Upload dist
         uses: actions/upload-artifact@v4
@@ -80,12 +89,14 @@ jobs:
       - name: Publish daisyui-toaster
         id: publish
         uses: JS-DevTools/npm-publish@v3
+        if: ${{ !cancelled() }}
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: dist
 
       - name: Create Tag for daisyui-toaster
         uses: rickstaa/action-create-tag@v1
+        if: ${{ !cancelled() }}
         with:
           tag: v${{ steps.publish.outputs.version }}
           tag_exists_error: false
