@@ -1,13 +1,17 @@
 import { signal } from '@angular/core';
 
 import { Toast, ToastMessage } from '../models/toast';
-import { ToastConfig } from '../models/toastconfig';
+import {
+  ToastConfig,
+  ToastHorizontalPosition,
+  ToastVerticalPosition,
+} from '../models/toastconfig';
 
 export class ToastService {
   public toasts = signal<ToastMessage[]>([]);
   public zIndex = 1000;
-  public verticalPosition = 'top';
-  public horizontalPosition = 'end';
+  public verticalPosition = ToastVerticalPosition.Top;
+  public horizontalPosition = ToastHorizontalPosition.End;
   public defaultDuration = 5000;
   public defaultShowClose = true;
   public defaultCloseOnClick = false;

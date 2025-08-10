@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @source "../../../dist/daisyui-toaster";
 @plugin "daisyui" {
-  themes: dark, light;
+  themes: all;
 }
 
 html,

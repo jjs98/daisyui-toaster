@@ -3,6 +3,8 @@
 [![bundle size](https://img.shields.io/bundlephobia/minzip/daisyui-toaster?color=%23FF006F&label=Bundle%20Size&style=for-the-badge)](https://bundlephobia.com/package/daisyui-toaster)
 [![Codecov](https://img.shields.io/codecov/c/github/jjs98/daisyui-toaster?style=for-the-badge)](https://codecov.io/gh/jjs98/daisyui-toaster)
 
+![daisyui-toaster Icon](docs/daisyui-toaster-128.png)
+
 # daisyui-toaster
 
 This is a customizable toast notification library for Angular applications, built with DaisyUI and Tailwind CSS.

@@ -18,6 +18,43 @@ import {
 export class App {
   protected readonly toastService = inject(ToastService);
   protected readonly ToastSeverity = ToastSeverity;
+  protected readonly themes = [
+    'light',
+    'dark',
+    'cupcake',
+    'bumblebee',
+    'emerald',
+    'corporate',
+    'synthwave',
+    'retro',
+    'cyberpunk',
+    'valentine',
+    'halloween',
+    'garden',
+    'forest',
+    'aqua',
+    'lofi',
+    'pastel',
+    'fantasy',
+    'wireframe',
+    'black',
+    'luxury',
+    'dracula',
+    'cmyk',
+    'autumn',
+    'business',
+    'acid',
+    'lemonade',
+    'night',
+    'coffee',
+    'winter',
+    'dim',
+    'nord',
+    'sunset',
+    'caramellatte',
+    'abyss',
+    'silk',
+  ];
   protected severity = ToastSeverity.Custom;
   protected summary = '';
   protected detail = '';
@@ -70,5 +107,11 @@ export class App {
       showClose: this.showClose,
       closeOnClick: this.closeOnClick,
     });
+  }
+
+  protected setTheme(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement;
+    const theme = selectElement.value;
+    document.documentElement.setAttribute('data-theme', theme || 'dark');
   }
 }

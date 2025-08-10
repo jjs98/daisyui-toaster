@@ -30,7 +30,7 @@
         id="severity"
         name="severity"
         [(ngModel)]="severity"
-        class="select select-bordered w-full">
+        class="select mt-1 w-full">
         <option [value]="ToastSeverity.Custom">Custom</option>
         <option [value]="ToastSeverity.Success">Success</option>
         <option [value]="ToastSeverity.Info">Info</option>
@@ -45,7 +45,7 @@
         name="summary"
         type="text"
         [(ngModel)]="summary"
-        class="input input-bordered w-full" />
+        class="input mt-1 w-full" />
     </div>
     <div>
       <label for="detail">Detail</label>
@@ -54,7 +54,7 @@
         name="detail"
         type="text"
         [(ngModel)]="detail"
-        class="input input-bordered w-full" />
+        class="input mt-1 w-full" />
     </div>
     <div>
       <label for="duration">Duration</label>
@@ -63,7 +63,7 @@
         name="duration"
         type="number"
         [(ngModel)]="duration"
-        class="input input-bordered w-full" />
+        class="input mt-1 w-full" />
     </div>
     <div>
       <label for="showClose">Show Close Button</label>
@@ -72,7 +72,7 @@
         name="showClose"
         type="checkbox"
         [(ngModel)]="showClose"
-        class="toggle toggle-primary" />
+        class="toggle toggle-primary ml-2" />
     </div>
     <div>
       <label for="closeOnClick">Close On Click</label>
@@ -81,7 +81,7 @@
         name="closeOnClick"
         type="checkbox"
         [(ngModel)]="closeOnClick"
-        class="toggle toggle-primary" />
+        class="toggle toggle-primary ml-2" />
     </div>
     <button
       class="btn btn-primary flex"
@@ -90,4 +90,28 @@
       Send custom Toast
     </button>
   </form>
+
+  <div class="form-control">
+    <label for="theme">daisyUI preset theme</label>
+    <select
+      id="theme"
+      name="theme"
+      class="select mt-1 w-full"
+      (change)="setTheme($event)">
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+      <option value="cupcake">Cupcake</option>
+      <option value="bumblebee">Bumblebee</option>
+      <option value="emerald">Emerald</option>
+      <option value="corporate">Corporate</option>
+      <option value="synthwave">Synthwave</option>
+      <option value="retro">Retro</option>
+      <option value="cyberpunk">Cyberpunk</option>
+      <option value="valentine">Valentine</option>
+      <option value="halloween">Halloween</option>
+      <option value="garden">Garden</option>
+      <option value="forest">Forest</option>
+      <option value="aqua">Aqua</option>
+    </select>
+  </div>
 </div>
