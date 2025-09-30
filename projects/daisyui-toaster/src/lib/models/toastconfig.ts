@@ -2,6 +2,10 @@ export interface ToastConfig {
   zIndex?: number;
   verticalPosition?: ToastVerticalPosition;
   horizontalPosition?: ToastHorizontalPosition;
+  topOffset?: number;
+  bottomOffset?: number;
+  leftOffset?: number;
+  rightOffset?: number;
   maxToasts?: number;
   defaultDuration?: number;
   defaultShowClose?: boolean;
@@ -15,7 +19,7 @@ export enum ToastVerticalPosition {
 }
 
 export enum ToastHorizontalPosition {
-  Start = 'start',
+  Left = 'start',
   Center = 'center',
-  End = 'end',
+  Right = 'end',
 }

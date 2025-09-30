@@ -21,7 +21,11 @@ describe('ToastService', (): void => {
     // Assert
     expect(service.zIndex).toEqual(1000);
     expect(service.verticalPosition).toEqual(ToastVerticalPosition.Top);
-    expect(service.horizontalPosition).toEqual(ToastHorizontalPosition.End);
+    expect(service.horizontalPosition).toEqual(ToastHorizontalPosition.Right);
+    expect(service.topOffset).toEqual(20);
+    expect(service.bottomOffset).toEqual(20);
+    expect(service.leftOffset).toEqual(20);
+    expect(service.rightOffset).toEqual(20);
     expect(service.defaultDuration).toEqual(5000);
     expect(service.defaultShowClose).toEqual(true);
     expect(service.defaultCloseOnClick).toEqual(false);
@@ -31,9 +35,13 @@ describe('ToastService', (): void => {
   it('should initialize with given config', (): void => {
     // Arrange
     const config: ToastConfig = {
-      zIndex: 1000,
+      zIndex: 2000,
       verticalPosition: ToastVerticalPosition.Top,
-      horizontalPosition: ToastHorizontalPosition.End,
+      horizontalPosition: ToastHorizontalPosition.Right,
+      topOffset: 30,
+      bottomOffset: 30,
+      leftOffset: 30,
+      rightOffset: 30,
       defaultDuration: 2000,
       defaultShowClose: false,
       defaultCloseOnClick: true,
@@ -47,6 +55,10 @@ describe('ToastService', (): void => {
     expect(service.zIndex).toEqual(config.zIndex);
     expect(service.verticalPosition).toEqual(config.verticalPosition);
     expect(service.horizontalPosition).toEqual(config.horizontalPosition);
+    expect(service.topOffset).toEqual(config.topOffset);
+    expect(service.bottomOffset).toEqual(config.bottomOffset);
+    expect(service.leftOffset).toEqual(config.leftOffset);
+    expect(service.rightOffset).toEqual(config.rightOffset);
     expect(service.defaultDuration).toEqual(config.defaultDuration);
     expect(service.defaultShowClose).toEqual(config.defaultShowClose);
     expect(service.defaultCloseOnClick).toEqual(config.defaultCloseOnClick);
@@ -59,6 +71,10 @@ describe('ToastService', (): void => {
       zIndex: undefined,
       verticalPosition: undefined,
       horizontalPosition: undefined,
+      topOffset: undefined,
+      bottomOffset: undefined,
+      leftOffset: undefined,
+      rightOffset: undefined,
       defaultDuration: undefined,
       defaultShowClose: undefined,
       defaultCloseOnClick: undefined,
@@ -71,7 +87,11 @@ describe('ToastService', (): void => {
     // Assert
     expect(service.zIndex).toEqual(1000);
     expect(service.verticalPosition).toEqual(ToastVerticalPosition.Top);
-    expect(service.horizontalPosition).toEqual(ToastHorizontalPosition.End);
+    expect(service.horizontalPosition).toEqual(ToastHorizontalPosition.Right);
+    expect(service.topOffset).toEqual(20);
+    expect(service.bottomOffset).toEqual(20);
+    expect(service.leftOffset).toEqual(20);
+    expect(service.rightOffset).toEqual(20);
     expect(service.defaultDuration).toEqual(5000);
     expect(service.defaultShowClose).toEqual(true);
     expect(service.defaultCloseOnClick).toEqual(false);

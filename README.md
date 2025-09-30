@@ -58,8 +58,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZonelessChangeDetection(),
     provideToastService({
-      horizontalPosition: ToastHorizontalPosition.Center,
+      horizontalPosition: ToastHorizontalPosition.Right,
       verticalPosition: ToastVerticalPosition.Top,
+      topOffset: 64,
+      rightOffset: 20,
       zIndex: 1000,
       defaultDuration: 5000,
       defaultShowClose: true,

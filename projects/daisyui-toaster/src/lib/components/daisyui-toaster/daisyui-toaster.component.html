@@ -6,7 +6,19 @@
     ' toast-' +
     toastService.horizontalPosition
   "
-  [style]="'z-index: ' + toastService.zIndex">
+  [style]="
+    'z-index: ' +
+    toastService.zIndex +
+    ';' +
+    (toastService.verticalPosition === 'top'
+      ? 'top: ' + toastService.topOffset + 'px;'
+      : 'bottom: ' + toastService.bottomOffset + 'px;') +
+    (toastService.horizontalPosition === 'start'
+      ? 'left: ' + toastService.leftOffset + 'px;'
+      : toastService.horizontalPosition === 'end'
+        ? 'right: ' + toastService.rightOffset + 'px;'
+        : '')
+  ">
   @for (toast of toastService.toasts(); track toast.id) {
     <ng-container>
       <div
@@ -25,11 +37,15 @@
               ? toast.callback()
               : null
         ">
-        <div class="flex-1">
-          <h3 id="toast-{{ toast.id }}-summary" class="font-bold">
+        <div class="max-w-xs flex-1">
+          <h3
+            id="toast-{{ toast.id }}-summary"
+            class="overflow-hidden font-bold overflow-ellipsis">
             {{ toast.summary }}
           </h3>
-          <div id="toast-{{ toast.id }}-detail" class="text-xs">
+          <div
+            id="toast-{{ toast.id }}-detail"
+            class="overflow-hidden text-xs overflow-ellipsis">
             {{ toast.detail }}
           </div>
         </div>

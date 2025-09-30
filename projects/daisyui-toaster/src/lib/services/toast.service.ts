@@ -11,7 +11,11 @@ export class ToastService {
   public toasts = signal<ToastMessage[]>([]);
   public zIndex = 1000;
   public verticalPosition = ToastVerticalPosition.Top;
-  public horizontalPosition = ToastHorizontalPosition.End;
+  public horizontalPosition = ToastHorizontalPosition.Right;
+  public topOffset = 20;
+  public bottomOffset = 20;
+  public leftOffset = 20;
+  public rightOffset = 20;
   public defaultDuration = 5000;
   public defaultShowClose = true;
   public defaultCloseOnClick = false;
@@ -33,6 +37,10 @@ export class ToastService {
       this.defaultCloseOnClick =
         toastConfig.defaultCloseOnClick ?? this.defaultCloseOnClick;
       this.maxToasts = toastConfig.maxToasts ?? this.maxToasts;
+      this.topOffset = toastConfig.topOffset ?? this.topOffset;
+      this.bottomOffset = toastConfig.bottomOffset ?? this.bottomOffset;
+      this.leftOffset = toastConfig.leftOffset ?? this.leftOffset;
+      this.rightOffset = toastConfig.rightOffset ?? this.rightOffset;
     }
   }
 
