@@ -7,6 +7,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 jobs:
   build:
     name: Build
@@ -18,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: install pnpm
         run: npm install -g pnpm
@@ -91,7 +95,6 @@ jobs:
         uses: JS-DevTools/npm-publish@v3
         if: ${{ !cancelled() }}
         with:
-          token: ${{ secrets.NPM_TOKEN }}
           package: dist
 
       - name: Create Tag for daisyui-toaster
