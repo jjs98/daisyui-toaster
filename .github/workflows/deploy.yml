@@ -87,6 +87,11 @@ jobs:
           name: dist
           path: daisyui-toaster
 
+      - name: Debug - List files
+        run: |
+          ls -la daisyui-toaster
+          cat daisyui-toaster/package.json
+
       - name: Get version
         id: package-version
         run: echo "version=$(jq -r .version daisyui-toaster/package.json)" >> $GITHUB_OUTPUT
