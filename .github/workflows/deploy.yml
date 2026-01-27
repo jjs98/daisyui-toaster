@@ -93,12 +93,15 @@ jobs:
       - name: Get version
         id: package-version
         run: echo "version=$(jq -r .version daisyui-toaster/package.json)" >> $GITHUB_OUTPUT
+
       - uses: actions/setup-node@v4
         if: ${{ !cancelled() }}
         with:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
-      - run: npm publish daisyui-toaster
+
+      - run: npm publish daisyui-toaster --provenance
+        if: ${{ !cancelled() }}
 
       - name: Create Tag for daisyui-toaster
         uses: rickstaa/action-create-tag@v1
