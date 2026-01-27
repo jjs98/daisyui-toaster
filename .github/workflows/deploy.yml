@@ -97,8 +97,9 @@ jobs:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
 
-      - run: npm publish daisyui-toaster --provenance
+      - run: npm publish --provenance
         if: ${{ !cancelled() }}
+        working-directory: daisyui-toaster
 
       - name: Create Tag for daisyui-toaster
         uses: rickstaa/action-create-tag@v1
