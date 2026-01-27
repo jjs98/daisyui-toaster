@@ -88,18 +88,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-          path: dist
+          path: daisyui-toaster
 
       - name: Get version
         id: package-version
-        run: echo "version=$(jq -r .version dist/package.json)" >> $GITHUB_OUTPUT
-
+        run: echo "version=$(jq -r .version daisyui-toaster/package.json)" >> $GITHUB_OUTPUT
       - uses: actions/setup-node@v4
         if: ${{ !cancelled() }}
         with:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
-      - run: npm publish dist
+      - run: npm publish daisyui-toaster
 
       - name: Create Tag for daisyui-toaster
         uses: rickstaa/action-create-tag@v1
