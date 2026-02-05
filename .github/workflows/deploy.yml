@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
 
       - name: Install dependencies
         run: pnpm install
@@ -93,15 +93,11 @@ jobs:
       - uses: actions/setup-node@v4
         if: ${{ !cancelled() }}
         with:
-          node-version: "22"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
 
       - run: corepack enable
         
-      - run: pnpm install
-        if: ${{ !cancelled() }}
-        working-directory: daisyui-toaster
-
       - run: pnpm publish
         if: ${{ !cancelled() }}
         working-directory: daisyui-toaster
