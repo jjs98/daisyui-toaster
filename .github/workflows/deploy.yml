@@ -98,7 +98,7 @@ jobs:
 
       - run: corepack enable
 
-      - run: pnpm publish
+      - run: pnpm publish --no-git-checks --provenance
         if: ${{ !cancelled() }}
         working-directory: daisyui-toaster
 
