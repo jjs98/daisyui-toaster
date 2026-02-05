@@ -94,9 +94,9 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
+          always-auth: false
 
-      - run: npm publish --provenance
+      - run: npm publish
         if: ${{ !cancelled() }}
         working-directory: daisyui-toaster
 
