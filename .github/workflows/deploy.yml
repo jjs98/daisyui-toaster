@@ -102,7 +102,7 @@ jobs:
 
       - name: Create Tag for daisyui-toaster
         uses: rickstaa/action-create-tag@v1
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && success() }}
         with:
           tag: v${{ steps.package-version.outputs.version }}
           tag_exists_error: false

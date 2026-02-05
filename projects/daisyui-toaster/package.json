@@ -4,6 +4,9 @@
   "author": {
     "name": "jjs98"
   },
+  "repository": {
+    "url": "https://github.com/jjs98/daisyui-toaster"
+  },
   "keywords": [
     "angular",
     "toast",
