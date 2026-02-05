@@ -35,10 +35,11 @@ jobs:
         run: pnpm test
 
       - name: Upload test results to Codecov
-        uses: codecov/test-results-action@v1
+        uses: codecov/codecov-action@v5
         if: ${{ !cancelled() }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          report_type: test_results
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
@@ -94,7 +95,6 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           node-version: '24'
-          always-auth: false
 
       - run: npm publish
         if: ${{ !cancelled() }}
